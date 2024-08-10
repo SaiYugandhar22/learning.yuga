@@ -1,0 +1,137 @@
+package tasks;
+
+import org.testng.annotations.Test;
+
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
+
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterTest;
+
+public class UITesting {
+	WebDriver driver;
+	
+  @Test
+  public void Chrome() throws IOException {
+	  driver = new ChromeDriver();
+	  driver.manage().window().maximize();
+	  driver.get("https://www.getcalley.com/page-sitemap.xml");
+	  driver.findElement(By.xpath("//*[@id=\"sitemap\"]/tbody/tr[1]/td[1]/a")).click();
+	  
+	  	Screenshot a = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+		ImageIO.write(a.getImage(), "PNG", new File("C:\\Users\\licious.DESKTOP-SSHCSEN\\OneDrive\\Documents\\Assignment Screenshots\\screenshot1.png"));
+	  
+	  driver.navigate().back();
+	  driver.findElement(By.xpath("//*[@id=\"sitemap\"]/tbody/tr[2]/td[1]/a")).click();
+	 	Screenshot b = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+			ImageIO.write(b.getImage(), "PNG", new File("C:\\Users\\licious.DESKTOP-SSHCSEN\\OneDrive\\Documents\\Assignment Screenshots\\screenshot2.png"));
+	  
+	  
+	  driver.navigate().back();
+	  driver.findElement(By.xpath("//*[@id=\"sitemap\"]/tbody/tr[3]/td[1]/a")).click();
+	  Screenshot c = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+		ImageIO.write(c.getImage(), "PNG", new File("C:\\Users\\licious.DESKTOP-SSHCSEN\\OneDrive\\Documents\\Assignment Screenshots\\screenshot3.png"));
+	  
+	  
+	  driver.navigate().back();  
+	  driver.findElement(By.xpath("//*[@id=\"sitemap\"]/tbody/tr[4]/td[1]/a")).click();
+	  Screenshot d = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+		ImageIO.write(d.getImage(), "PNG", new File("C:\\Users\\licious.DESKTOP-SSHCSEN\\OneDrive\\Documents\\Assignment Screenshots\\screenshot4.png"));
+	  
+	  
+	  driver.navigate().back();
+	  driver.findElement(By.xpath("//*[@id=\"sitemap\"]/tbody/tr[5]/td[1]/a")).click();
+	  Screenshot e = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+		ImageIO.write(e.getImage(), "PNG", new File("C:\\Users\\licious.DESKTOP-SSHCSEN\\OneDrive\\Documents\\Assignment Screenshots\\screenshot5.png"));
+	  
+	  
+  }
+ 
+  @Test
+  public void Edge() throws IOException {
+	  driver = new EdgeDriver();
+	  driver.manage().window().maximize();
+	  driver.get("https://www.getcalley.com/page-sitemap.xml");
+	  driver.findElement(By.xpath("//*[@id=\"sitemap\"]/tbody/tr[1]/td[1]/a")).click();
+	  
+	  	Screenshot s = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+		ImageIO.write(s.getImage(), "PNG", new File("C:\\Users\\licious.DESKTOP-SSHCSEN\\OneDrive\\Documents\\Assignment Screenshots\\screenshot6.png"));
+	  
+	  driver.navigate().back();
+	  driver.findElement(By.xpath("//*[@id=\"sitemap\"]/tbody/tr[2]/td[1]/a")).click();
+	 	Screenshot f = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+			ImageIO.write(f.getImage(), "PNG", new File("C:\\Users\\licious.DESKTOP-SSHCSEN\\OneDrive\\Documents\\Assignment Screenshots\\screenshot7.png"));
+	  
+	  
+	  driver.navigate().back();
+	  driver.findElement(By.xpath("//*[@id=\"sitemap\"]/tbody/tr[3]/td[1]/a")).click();
+	  Screenshot g = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+		ImageIO.write(g.getImage(), "PNG", new File("C:\\Users\\licious.DESKTOP-SSHCSEN\\OneDrive\\Documents\\Assignment Screenshots\\screenshot8.png"));
+	  
+	  
+	  driver.navigate().back();  
+	  driver.findElement(By.xpath("//*[@id=\"sitemap\"]/tbody/tr[4]/td[1]/a")).click();
+	  Screenshot h = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+		ImageIO.write(h.getImage(), "PNG", new File("C:\\Users\\licious.DESKTOP-SSHCSEN\\OneDrive\\Documents\\Assignment Screenshots\\screenshot9.png"));
+	  
+	  
+	  driver.navigate().back();
+	  driver.findElement(By.xpath("//*[@id=\"sitemap\"]/tbody/tr[5]/td[1]/a")).click();
+	  Screenshot i = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+		ImageIO.write(i.getImage(), "PNG", new File("C:\\Users\\licious.DESKTOP-SSHCSEN\\OneDrive\\Documents\\Assignment Screenshots\\screenshot10.png"));
+	  
+  }
+ 
+  @Test
+  public void Firefox() throws Exception {
+	  driver = new FirefoxDriver();
+	  driver.manage().window().maximize();
+	  driver.get("https://www.getcalley.com/page-sitemap.xml");
+	  driver.findElement(By.xpath("//*[@id=\"sitemap\"]/tbody/tr[1]/td[1]/a")).click();
+	  
+	  	Screenshot j = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+		ImageIO.write(j.getImage(), "PNG", new File("C:\\Users\\licious.DESKTOP-SSHCSEN\\OneDrive\\Documents\\Assignment Screenshots\\screenshot11.png"));
+	  
+	  driver.navigate().back();
+	  driver.findElement(By.xpath("//*[@id=\"sitemap\"]/tbody/tr[2]/td[1]/a")).click();
+	 	Screenshot k = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+			ImageIO.write(k.getImage(), "PNG", new File("C:\\Users\\licious.DESKTOP-SSHCSEN\\OneDrive\\Documents\\Assignment Screenshots\\screenshot12.png"));
+	  
+	  
+	  driver.navigate().back();
+	  driver.findElement(By.xpath("//*[@id=\"sitemap\"]/tbody/tr[3]/td[1]/a")).click();
+	  Screenshot l = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+		ImageIO.write(l.getImage(), "PNG", new File("C:\\Users\\licious.DESKTOP-SSHCSEN\\OneDrive\\Documents\\Assignment Screenshots\\screenshot13.png"));
+	  
+	  
+	  driver.navigate().back();  
+	  driver.findElement(By.xpath("//*[@id=\"sitemap\"]/tbody/tr[4]/td[1]/a")).click();
+	  Screenshot m = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+		ImageIO.write(m.getImage(), "PNG", new File("C:\\Users\\licious.DESKTOP-SSHCSEN\\OneDrive\\Documents\\Assignment Screenshots\\screenshot14.png"));
+	  
+	  
+	  driver.navigate().back();
+	  driver.findElement(By.xpath("//*[@id=\"sitemap\"]/tbody/tr[5]/td[1]/a")).click();
+	  Screenshot n = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+		ImageIO.write(n.getImage(), "PNG", new File("C:\\Users\\licious.DESKTOP-SSHCSEN\\OneDrive\\Documents\\Assignment Screenshots\\screenshot15.png"));
+	  
+  }
+ 
+ 
+
+  @AfterTest
+  public void afterTest() {
+	  driver.close();
+  }
+
+}

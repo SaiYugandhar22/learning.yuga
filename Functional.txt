@@ -1,0 +1,66 @@
+package tasks;
+
+import org.testng.annotations.Test;
+
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
+
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+
+public class FunctionalTesting {
+	WebDriver driver;
+	
+	
+	
+  @Test
+  public void functional() throws InterruptedException, IOException {
+	  driver.get("https://demo.dealsdray.com/");
+	  
+	  driver.findElement(By.xpath("//*[@id=\"mui-1\"]")).sendKeys("prexo.mis@dealsdray.com");
+	  driver.findElement(By.xpath("//*[@id=\"mui-2\"]")).sendKeys("prexo.mis@dealsdray.com");
+	  driver.findElement(By.xpath("//*[@type=\"submit\"]")).click();
+	  Thread.sleep(3000);
+	  
+	  driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[1]/div/div[2]/div[1]/div[2]/button/div[2]/span")).click();
+	  driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[1]/div/div[2]/div[1]/div[2]/div/div[1]/a/button")).click();
+	  
+	  Thread.sleep(3000);
+	  driver.findElement(By.xpath("//*[@align=\"right\"]")).click();
+	  
+	  Thread.sleep(5000);
+	  driver.findElement(By.xpath("//*[@type=\"file\"]")).sendKeys("C:\\Users\\licious.DESKTOP-SSHCSEN\\OneDrive\\Documents\\Assignment Screenshots\\demo-data (1).xlsx");
+  
+	 Thread.sleep(3000);
+	  driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div[2]/div[3]/button")).click();
+	  
+	 
+	  Thread.sleep(3000);
+	  driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div[2]/div[3]/button")).click();
+	 
+	  
+	  Thread.sleep(3000);
+	  driver.switchTo().alert().accept();
+	
+	  Thread.sleep(3000);
+	  
+	  Screenshot y = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+		ImageIO.write(y.getImage(), "PNG", new File("C:\\Users\\licious.DESKTOP-SSHCSEN\\OneDrive\\Documents\\Assignment Screenshots\\functionaltesting.png"));
+  
+  }
+  
+  @BeforeTest
+  public void beforeTest() {
+	  driver = new ChromeDriver();
+	  driver.manage().window().maximize();
+  }
+
+}
